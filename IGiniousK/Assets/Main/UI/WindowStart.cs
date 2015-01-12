@@ -10,7 +10,7 @@ public class WindowStart : BaseWindow
 
     public void OnStartClicked()
     {
-        //GameController.StartGame();//randomButton.isOn?-1:Convert.ToInt32(randomNumberText.text));
+        GameController.StartGame();
     }
 
     public void OnExitClick(){

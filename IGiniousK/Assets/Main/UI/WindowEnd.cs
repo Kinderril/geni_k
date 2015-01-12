@@ -8,12 +8,13 @@ public class WindowEnd : BaseWindow
 
     public void OnOkClicked()
     {
-        //GameController.OnEndConfirm();
+        GameController.OnEndConfirm();
     }
 
     public override void Init(GameController gc)
     {
         base.Init(gc);
+        cureentResult.text = gc.GetEndTime().ToString("00.00");
     }
 
     public void OnFBClicked()

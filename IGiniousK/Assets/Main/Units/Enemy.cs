@@ -10,14 +10,16 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        Vector2 v = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        direction = v.normalized*4;
     }
 
     void Update()
     {
-        if (gc.GameStage == GameStage.game)
-            transform.position = new Vector2(transform.position.x + direction.x * Time.deltaTime, transform.position.y + direction.y * Time.deltaTime);
+        if (gc.Game_Stage == GameStage.game)
+        {
+            transform.position = new Vector2(transform.position.x + direction.x*Time.deltaTime,
+                transform.position.y + direction.y*Time.deltaTime);
+            direction *= 1.001f;
+        }
     }
 
     public void collider(SideCollide side)
@@ -46,6 +48,8 @@ public class Enemy : MonoBehaviour
     public void Init(GameController gc)
     {
         this.gc = gc;
+        Vector2 v = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        direction = v.normalized * 4;
     }
     
 }

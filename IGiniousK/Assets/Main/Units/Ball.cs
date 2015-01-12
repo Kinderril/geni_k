@@ -18,7 +18,6 @@ public class Ball : MonoBehaviour
 
     public void EndGame()
     {
-        Debug.Log("End");
         gamec.EndGame();
     }
 
