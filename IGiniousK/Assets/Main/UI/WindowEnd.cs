@@ -5,6 +5,7 @@ public class WindowEnd : BaseWindow
 {
     public Text cureentResult;
     public Text bestResult;
+    public Slider endSlider;
 
     public void OnOkClicked()
     {
@@ -14,6 +15,7 @@ public class WindowEnd : BaseWindow
     public override void Init(GameController gc)
     {
         base.Init(gc);
+        endSlider.value = gc.GetEndTime()/20f;
         cureentResult.text = gc.GetEndTime().ToString("00.00");
     }
 
