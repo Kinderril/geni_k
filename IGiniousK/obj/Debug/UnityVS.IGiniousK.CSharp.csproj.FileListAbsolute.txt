@@ -1,0 +1,13 @@
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\IFacebook.dll
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Rep_IGin_K\IGiniousK\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Rep_IGin_K\IGiniousK\obj\Debug\UnityVS.IGiniousK.CSharp.csprojResolveAssemblyReference.cache
+C:\Rep_IGin_K\IGiniousK\obj\Debug\Assembly-CSharp.dll
+C:\Rep_IGin_K\IGiniousK\obj\Debug\Assembly-CSharp.pdb

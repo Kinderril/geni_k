@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Advertisements;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -18,6 +20,11 @@ public class GameController : MonoBehaviour
     public WindowInGame inGameUi;
     public List<BaseWindow> allWindows;
     public BaseWindow startCanvas;
+    public FaceBookController fbControls;
+    public AdvController advController;
+    public ResultController resultController;
+   // public Chartboost chartboost;
+    public Text DebugText;
 
     public GameStage Game_Stage
     {
@@ -51,6 +58,9 @@ public class GameController : MonoBehaviour
         {
             enemiesStartPositions.Add(enemy.transform.position);
         }
+        fbControls = new FaceBookController(this, DebugText);
+        advController = new AdvController(this,DebugText);
+        resultController = new ResultController();
     }
 
     public float GetEndTime()
@@ -96,6 +106,12 @@ public class GameController : MonoBehaviour
         {
             enemy.gameObject.SetActive(false);
         }
+        resultController.roundNumber++;
+        if (resultController.roundNumber % 2 == 0)
+            advController.ShowAdv();
+        else
+            advController.ShowAdvCB();
+    
     }
 
     public void OnEndConfirm()

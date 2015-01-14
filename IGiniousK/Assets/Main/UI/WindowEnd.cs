@@ -1,4 +1,5 @@
 ﻿
+using UnityEngine.Advertisements;
 using UnityEngine.UI;
 
 public class WindowEnd : BaseWindow
@@ -17,11 +18,12 @@ public class WindowEnd : BaseWindow
         base.Init(gc);
         endSlider.value = gc.GetEndTime()/20f;
         cureentResult.text = gc.GetEndTime().ToString("00.00");
+
     }
 
     public void OnFBClicked()
     {
-        //GameController.faceBook.SendImage();
+        GameController.fbControls.SendImage();
     }
 }
 
