@@ -1,6 +1,18 @@
 Base path: C:/Unity 5.0.0b14/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-3-6828
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-3-7300
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=9 type=0 insize=975 outsize=864 kw= ok=1
+Cmd: compileSnippet
+  api=9 type=0 insize=971 outsize=859 kw= ok=1
+Cmd: compileSnippet
+  api=5 type=0 insize=972 outsize=788 kw= ok=1
+Cmd: compileSnippet
+  api=5 type=0 insize=976 outsize=792 kw= ok=1
+Cmd: compileSnippet
+  api=5 type=0 insize=964 outsize=780 kw= ok=1
+Cmd: compileSnippet
+  api=5 type=0 insize=972 outsize=788 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=Канал был закрыт.
 
 

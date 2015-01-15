@@ -109,6 +109,7 @@ public class GameController : MonoBehaviour
             enemy.gameObject.SetActive(false);
         }
         resultController.roundNumber++;
+        resultController.lastTime = endTime - startTime;
         if (resultController.roundNumber % 2 == 0)
             advController.ShowAdv();
         else
