@@ -14,7 +14,13 @@ public class FaceBookController  {
 
     void Awake()
     {
+        FB.Init(onComplete);
 	}
+
+    private void onComplete()
+    {
+        Log("FB inited");
+    }
 	
 	// Update is called once per frame
 	void Update () {

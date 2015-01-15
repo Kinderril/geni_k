@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public FaceBookController fbControls;
     public AdvController advController;
     public ResultController resultController;
+    public GameObject AdMobGameObject;
    // public Chartboost chartboost;
     public Text DebugText;
 
@@ -72,7 +73,6 @@ public class GameController : MonoBehaviour
 	{
 	    uiControls = GetComponent<UIControls>();
         uiControls.Init(ball);
-        Debug.Log("Init " + allWindows.Count);
         WindowManager.Init(allWindows,this);
         WindowManager.WindowOn(startCanvas);
 	}
@@ -96,10 +96,12 @@ public class GameController : MonoBehaviour
         ball.Init(this);
         Game_Stage = GameStage.game;
         startTime = Time.time;
+        AdMobGameObject.gameObject.SetActive(true);
     }
 
     public void EndGame()
     {
+        AdMobGameObject.gameObject.SetActive(false);
         endTime = Time.time;
         Game_Stage = GameStage.end;
         foreach (var enemy in enemies)
