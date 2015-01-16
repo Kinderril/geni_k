@@ -23,7 +23,8 @@ public class GameController : MonoBehaviour
     public FaceBookController fbControls;
     public AdvController advController;
     public ResultController resultController;
-    public GameObject AdMobGameObject;
+    //public GameObject AdMobGameObject;
+    public float MaxTime = 25f;
    // public Chartboost chartboost;
     public Text DebugText;
 
@@ -92,16 +93,16 @@ public class GameController : MonoBehaviour
             enemy.transform.position = enemiesStartPositions[i];
             i++;
         }
-        ball.transform.position = startBallPos;
-        ball.Init(this);
+        //ball.transform.position = startBallPos;
+        ball.Init(this, startBallPos);
         Game_Stage = GameStage.game;
         startTime = Time.time;
-        AdMobGameObject.gameObject.SetActive(true);
+    //    AdMobGameObject.gameObject.SetActive(false);
     }
 
     public void EndGame()
     {
-        AdMobGameObject.gameObject.SetActive(false);
+     //   AdMobGameObject.gameObject.SetActive(true);
         endTime = Time.time;
         Game_Stage = GameStage.end;
         foreach (var enemy in enemies)
@@ -110,15 +111,14 @@ public class GameController : MonoBehaviour
         }
         resultController.roundNumber++;
         resultController.lastTime = endTime - startTime;
-        if (resultController.roundNumber % 2 == 0)
-            advController.ShowAdv();
-        else
-            advController.ShowAdvCB();
+        advController.AfterRoundAdv(resultController.roundNumber);
     
     }
+
 
     public void OnEndConfirm()
     {
         Game_Stage = GameStage.mainMenu;
     }
+
 }

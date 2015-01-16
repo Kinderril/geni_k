@@ -7,7 +7,7 @@ public class UIControls : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
     private Ball ball;
     private Vector2 basePosition;
     private Vector2 baseballPosition;
-    private Vector2 curPower;
+    //private Vector2 curPower;
     public float distancePercent = 0.5f;
    // private float d;
     //public Image StartDragImage;
@@ -42,13 +42,13 @@ public class UIControls : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        curPower = Vector2.zero;
-        //StartDragImage.gameObject.SetActive(false);
+        //curPower = Vector2.zero;
+        ////StartDragImage.gameObject.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         offset = (eventData.position - basePosition) / scalefactor;
-        ball.transform.position = baseballPosition + offset;
+        ball.SetPos(baseballPosition + offset);
     }
 }

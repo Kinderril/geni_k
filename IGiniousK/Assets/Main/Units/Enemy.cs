@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
     {
         this.gc = gc;
         Vector2 v = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        direction = v.normalized * 4;
+        direction = v.normalized * 2;
     }
     
 }

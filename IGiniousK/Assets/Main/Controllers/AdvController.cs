@@ -6,30 +6,26 @@ using UnityEngine.UI;
 public class AdvController
 {
     private Text debugText;
+    private bool isAdv = true;
 
     public AdvController(GameController gc, Text text)
     {
         debugText = text;
-        Advertisement.Initialize("23042", true);
-        Log("Advertisement " + Advertisement.isReady());
-       // Chartboost.cacheMoreApps(CBLocation.GameOver);
-        // Your Publisher ID is: 47205add69ea9390660aa634f662514f
+        Advertisement.Initialize("23042", false);
         HeyzapAds.start("47205add69ea9390660aa634f662514f", HeyzapAds.FLAG_NO_OPTIONS);
-      //  HeyzapAds.
     }
 
-    public void ShowAdv()
+    private void ShowAdv()
     {
-        
         Log("Advertisement " + Advertisement.isReady());
         if (Advertisement.isReady())
         {
             Advertisement.Show();
+            
         }
-
     }
 
-    public void ShowAdvCB()
+    private void ShowAdvCb()
     {
         Log("HZInterstitialAd " + HZInterstitialAd.isAvailable());
         if (HZInterstitialAd.isAvailable())
@@ -37,7 +33,6 @@ public class AdvController
             //HZInterstitialAd.fetch();
             HZInterstitialAd.show();
         }
-       // Chartboost.showInterstitial(CBLocation.GameOver);
     }
 
     private void Log(string s)
@@ -47,5 +42,21 @@ public class AdvController
         Debug.Log(s);
     }
 
+
+    public void AfterRoundAdv(int round)
+    {
+        if (round%3==0)
+        {
+            if (isAdv)
+            {
+                ShowAdv();
+            }
+            else
+            {
+                ShowAdvCb();
+            }
+            isAdv = !isAdv;
+        }
+    }
 }
 
