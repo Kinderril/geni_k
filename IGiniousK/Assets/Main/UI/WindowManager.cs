@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 
 public class WindowManager
@@ -10,14 +11,17 @@ public class WindowManager
     private static BaseWindow curWindow;
     private static GameController gc;
 
+
     public static void Init(List<BaseWindow> allWindowsInc, GameController gc)
     {
         allWindows = allWindowsInc;
         WindowManager.gc = gc;
+        //fadePanel.GetComponent<Animator>().
     }
 
     public static void WindowOn(BaseWindow bw)
     {
+        //gc.fadePanel.StartAnim(bw.transform);
         if (curWindow == bw)
             return;
         if (curWindow != null)

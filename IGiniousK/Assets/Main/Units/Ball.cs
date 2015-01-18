@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
     public Vector3 startPos;
     public Vector2 LT = new Vector2(-5.324f, 6.04f);
     public Vector2 BR = new Vector2(6.69f, -5.91f);
+    private Animator animator;
+    public bool isHitWall = true;
 
     void Update()
     {
@@ -23,6 +25,8 @@ public class Ball : MonoBehaviour
 
     public void Init(GameController gameController,Vector3 pos)
     {
+        animator = GetComponent<Animator>();
+        animator.SetBool("isHit", false);
         gamec = gameController;
         curLive = 0;
         startPos = pos;
@@ -31,6 +35,7 @@ public class Ball : MonoBehaviour
 
     public void BallGetHit()
     {
+        animator.SetBool("isHit", true);
         curLive++;
         BaseWindow bw = WindowManager.GetCurrentWindow();
         if (curLive >= maxLives)
@@ -45,7 +50,8 @@ public class Ball : MonoBehaviour
         var b = other.gameObject.GetComponent<ColliderObject>();
         if (b != null)
         {
-            BallGetHit();
+            if (isHitWall)
+                BallGetHit();
         }
         else
         {
@@ -55,6 +61,11 @@ public class Ball : MonoBehaviour
                 BallGetHit();
             }
         }
+    }
+
+    public void HitEnd()
+    {
+        animator.SetBool("isHit",false);
     }
 }
 

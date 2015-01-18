@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public Vector2 direction;
     private GameController gc;
     public float acc = 1.0015f;
+    private Vector2 accv;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class Enemy : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x + direction.x*Time.deltaTime,
                 transform.position.y + direction.y*Time.deltaTime);
-            direction *= acc;
+            direction *= (1 + acc*Time.deltaTime);
         }
     }
 
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
     {
         this.gc = gc;
         Vector2 v = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        accv = new Vector2(acc, acc);
         direction = v.normalized * 2;
     }
     

@@ -10,7 +10,8 @@ public class WindowInGame : BaseWindow
     public GameObject hitPanel;
     public GameObject life;
     public GameObject lifeContainer;
-    private List<StarContainer> lifes = new List<StarContainer>(); 
+    private List<StarContainer> lifes = new List<StarContainer>();
+    public float h_offset = -200;
 
     public override void Init(GameController gc)
     {
@@ -22,7 +23,7 @@ public class WindowInGame : BaseWindow
             {
                 GameObject go = Instantiate(life);
                 go.transform.parent = lifeContainer.transform;
-                go.transform.localPosition = new Vector3(4, -300/2.5f +  i*60);
+                go.transform.localPosition = new Vector3(4, h_offset / (gc.ball.maxLives/2) + i * 60);
                 lifes.Add(go.GetComponent<StarContainer>());
             }
         }
@@ -40,8 +41,8 @@ public class WindowInGame : BaseWindow
     public void SetHit()
     {
         lifes[GameController.ball.curLive-1].Close();
-        hitPanel.gameObject.SetActive(true);
-        StartCoroutine(hitWait());
+        //hitPanel.gameObject.SetActive(true);
+        //StartCoroutine(hitWait());
     }
 
     private IEnumerator hitWait()

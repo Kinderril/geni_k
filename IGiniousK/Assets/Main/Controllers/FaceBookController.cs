@@ -11,6 +11,7 @@ public class FaceBookController  {
     Facebook.FacebookDelegate fbDelegate;
     public Text debugt;
     private GameController gameController;
+    private string msg;
 
     void Awake()
     {
@@ -31,15 +32,18 @@ public class FaceBookController  {
     {
         this.debugt = debugt;
         this.gameController = gameController;
+        FB.Init(onComplete);
     }
 
-    public void SendImage()
+    public void SendImage(string msg)
     {
+        this.msg = msg;
         SetInit();
     }
 
     private void SetInit()
-    {               
+    {
+        Log("FB IsLoggedIn " + FB.IsLoggedIn);
         if (FB.IsLoggedIn)
         {
            // Util.Log("Already logged in");
@@ -47,7 +51,7 @@ public class FaceBookController  {
         }
         else
         {
-            debugt.text = "NOT !!! Logged in. ID: " + FB.UserId;
+            Log("NOT !!! Logged in. ID: " + FB.UserId);
             CallFBLogin();
 
         }
@@ -110,10 +114,10 @@ public class FaceBookController  {
     void MyPictureCallback()
     {
         FB.Feed(
-            linkCaption: "I just beat " + gameController.GetEndTime() + " friends! Can you beat it?",
-            picture: "http://www.friendsmash.com/images/logo_large.jpg",
-            linkName: "Checkout my greatness!",
-            link: "http://apps.facebook.com/" + FB.AppId + "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest"),
+            linkCaption: "",
+            picture: "https://fbcdn-photos-f-a.akamaihd.net/hphotos-ak-xfp1/t39.2081-0/p128x128/10935991_1402239463405550_579798466_n.png",
+            linkName: "My time is:" + gameController.GetEndTime().ToString("00.00") + " \n I am " + msg + " Gin!",
+            link: "http://apps.facebook.com/" + FB.AppId ,//+ "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest"),
             callback: fbDelegate
             ); 
 

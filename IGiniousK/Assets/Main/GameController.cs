@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     public float MaxTime = 25f;
    // public Chartboost chartboost;
     public Text DebugText;
+    //public FadePanel fadePanel;
 
     public GameStage Game_Stage
     {
