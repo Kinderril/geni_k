@@ -78,7 +78,7 @@ public class Ball : MonoBehaviour
         switch (item.type)
         {
             case ItemType.AccLow:
-                gamec.LowSpeed(item.transform.position);
+                gamec.LowSpeed(item.transform.position,item.EffectDuration);
                 break;
             case ItemType.Life:
                 if (curLive > 0)

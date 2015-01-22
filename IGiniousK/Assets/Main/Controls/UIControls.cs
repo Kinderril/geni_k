@@ -8,12 +8,16 @@ public class UIControls : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
     private Vector2 basePosition;
     private Vector2 baseballPosition;
     //private Vector2 curPower;
-    public float distancePercent = 0.5f;
+   // public float distancePercent = 0.5f;
    // private float d;
     //public Image StartDragImage;
     private Vector2 offset;
     private Vector2 _r;
     public float scalefactor  = 1;
+
+    void Awake()
+    {
+    }
 
 	void Start ()
 	{
@@ -26,6 +30,8 @@ public class UIControls : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
     public void Init(Ball ball)
     {
         this.ball = ball;
+        scalefactor = 30 * Screen.width / 800;
+   //     Debug.Log("scale = " + scalefactor);
     }
 	
 	// Update is called once per frame

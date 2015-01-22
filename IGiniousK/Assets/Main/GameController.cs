@@ -148,11 +148,11 @@ public class GameController : MonoBehaviour
     }
 
 
-    public void LowSpeed(Vector3 pos)
+    public void LowSpeed(Vector3 pos,float effectPower)
     {
         foreach (var enemy in enemies)
         {
-            enemy.LowSpped(itemsController.lowSpeedPeriod);
+            enemy.LowSpped(itemsController.lowSpeedPeriod * effectPower);
         }
         WindowInGame.LaunchPoints(pos,50);
         points += 50;
