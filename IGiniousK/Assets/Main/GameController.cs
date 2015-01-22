@@ -204,5 +204,12 @@ public class GameController : MonoBehaviour
     {
         WindowInGame.SetHit();
     }
+
+    public void HelpOn()
+    {
+        Debug.Log("HelpOn");
+        Game_Stage = GameStage.help;
+
+    }
 }
 

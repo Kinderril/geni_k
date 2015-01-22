@@ -77,6 +77,7 @@
      <Compile Include="Assets\Main\UI\FlyText.cs" />
      <Compile Include="Assets\Main\UI\StarContainer.cs" />
      <Compile Include="Assets\Main\UI\WindowEnd.cs" />
+     <Compile Include="Assets\Main\UI\WindowHelp.cs" />
      <Compile Include="Assets\Main\UI\WindowInGame.cs" />
      <Compile Include="Assets\Main\UI\WindowManager.cs" />
      <Compile Include="Assets\Main\UI\WindowStart.cs" />

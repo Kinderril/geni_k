@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class WindowStart : BaseWindow
 {
     public Text resultsText;
-
+    
     public void OnStartClicked()
     {
         GameController.StartGame();
@@ -21,6 +21,11 @@ public class WindowStart : BaseWindow
     {
         base.Init(gc);
         resultsText.text = "Last Result\n " + gc.resultController.TotalPoints().ToString("0");
+    }
+
+    public void OnHelpClicked()
+    {
+        GameController.HelpOn();
     }
 }
 
