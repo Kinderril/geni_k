@@ -20,7 +20,7 @@ public class WindowStart : BaseWindow
     public override void Init(GameController gc)
     {
         base.Init(gc);
-        resultsText.text = gc.resultController.lastTime.ToString("00.00");
+        resultsText.text = "Last Result\n " + gc.resultController.TotalPoints().ToString("0");
     }
 }
 

@@ -50,7 +50,7 @@ public class WindowInGame : BaseWindow
 
     public void LaunchPoints(Vector3 pos,int points)
     {
-        Debug.Log("LaunchPoints !!! ");
+//        Debug.Log("LaunchPoints !!! ");
         var txt = Instantiate(flyText.gameObject, Camera.main.ViewportToWorldPoint(pos) ,Quaternion.identity) as GameObject;
         txt.transform.parent = flyHolder;
         txt.GetComponent<FlyText>().SetText("+"+points);

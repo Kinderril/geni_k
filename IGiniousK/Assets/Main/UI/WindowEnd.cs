@@ -6,7 +6,8 @@ public class WindowEnd : BaseWindow
 {
     public Text cureentResult;
     public Text bestResult;
-    public Slider endSlider;
+    public Text pointsLabel;
+    //public Slider endSlider;
     private string send2fb = "";
 
     public void OnOkClicked()
@@ -17,10 +18,12 @@ public class WindowEnd : BaseWindow
     public override void Init(GameController gc)
     {
         base.Init(gc);
-        endSlider.value = gc.GetEndTime() / gc.MaxTime;
-        cureentResult.text = gc.GetEndTime().ToString("00.00");
+        //endSlider.value = gc.GetEndTime() / gc.MaxTime;
+        pointsLabel.text = "Points: \n" +  gc.resultController.lastPoints.ToString();
+        cureentResult.text = "Time: \n" + gc.GetEndTime().ToString("00.00");
         string ss = "It's All You Can?";
         send2fb = "so-so";
+        /*
         if (endSlider.value > 0.6f)
         {
             if (endSlider.value < 0.7f)
@@ -43,8 +46,8 @@ public class WindowEnd : BaseWindow
                 ss = "Godlike!!!!";
                 send2fb = "Godlike";
             }
-        }
-        bestResult.text = ss;
+        }*/
+        bestResult.text = "Total:"+(gc.resultController.TotalPoints()).ToString("00");
     }
 
     public void OnFBClicked()

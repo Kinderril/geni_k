@@ -129,20 +129,21 @@ public class GameController : MonoBehaviour
     {
      //   AdMobGameObject.gameObject.SetActive(true);
         endTime = Time.time;
-        Game_Stage = GameStage.end;
+        resultController.lastPoints = points;
         foreach (var enemy in enemies)
         {
             enemy.gameObject.SetActive(false);
         }
         resultController.roundNumber++;
         resultController.lastTime = endTime - startTime;
-        advController.AfterRoundAdv(resultController.roundNumber);
+        Game_Stage = GameStage.end;
     
     }
 
 
     public void OnEndConfirm()
     {
+        advController.AfterRoundAdv(resultController.roundNumber);
         Game_Stage = GameStage.mainMenu;
     }
 
@@ -175,7 +176,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                enemy.StartRotate();
+                //enemy.StartRotate();
             }
             i++;
         }

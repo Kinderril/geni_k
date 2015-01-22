@@ -17,9 +17,20 @@ public class ItemsController : MonoBehaviour
         this.gameController = gameController;
         nextLowSpeedAccure = Time.time + lowSpeedPeriod;
         nextRandomAccure = Time.time + randomPeriod;
+	    ClearElements();
     }
 
-	public void UpdateByGameController () {
+    private void ClearElements()
+    {
+        var list = GetComponentsInChildren<BaseItem>();
+        Debug.Log("list " + list.Length);
+        foreach (var baseItem in list)
+        {
+            Destroy(baseItem.gameObject);
+        }
+    }
+
+    public void UpdateByGameController () {
 	    if (nextLowSpeedAccure < Time.time)
 	    {
             DoItem(LowSpeed);

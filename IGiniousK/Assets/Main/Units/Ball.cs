@@ -65,7 +65,7 @@ public class Ball : MonoBehaviour
             }
         }
         var a = other.gameObject.GetComponent<BaseItem>();
-        Debug.Log("OnTriggerEnter2D " + a);
+//        Debug.Log("OnTriggerEnter2D " + a);
         if (a != null)
         {
             GetItem(a);
