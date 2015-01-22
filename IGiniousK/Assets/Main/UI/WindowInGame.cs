@@ -7,11 +7,14 @@ using UnityEngine.UI;
 public class WindowInGame : BaseWindow
 {
     public Text TimeLabel;
+    public Text PointLabel;
     public GameObject hitPanel;
+    public RectTransform flyHolder; 
     public GameObject life;
     public GameObject lifeContainer;
     private List<StarContainer> lifes = new List<StarContainer>();
     public float h_offset = -200;
+    public FlyText flyText;
 
     public override void Init(GameController gc)
     {
@@ -43,6 +46,24 @@ public class WindowInGame : BaseWindow
         lifes[GameController.ball.curLive-1].Close();
         //hitPanel.gameObject.SetActive(true);
         //StartCoroutine(hitWait());
+    }
+
+    public void LaunchPoints(Vector3 pos,int points)
+    {
+        Debug.Log("LaunchPoints !!! ");
+        var txt = Instantiate(flyText.gameObject, Camera.main.ViewportToWorldPoint(pos) ,Quaternion.identity) as GameObject;
+        txt.transform.parent = flyHolder;
+        txt.GetComponent<FlyText>().SetText("+"+points);
+    }
+
+    public void SetPoints(int points)
+    {
+        PointLabel.text = "" + points;
+    }
+
+    public void GetLife()
+    {
+        lifes[GameController.ball.curLive].Open();
     }
 
     private IEnumerator hitWait()

@@ -7,14 +7,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3FEEA8C7-4F88-B4EA-72DE-4EC666E281BA}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.0.0b14</UnityVersion>
@@ -87,11 +89,14 @@
     <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
     <Compile Include="Assets\Main\Controllers\AdvController.cs" />
     <Compile Include="Assets\Main\Controllers\FaceBookController.cs" />
+    <Compile Include="Assets\Main\Controllers\ItemsController.cs" />
     <Compile Include="Assets\Main\Controllers\ResultController.cs" />
     <Compile Include="Assets\Main\Controls\UIControls.cs" />
     <Compile Include="Assets\Main\GameController.cs" />
+    <Compile Include="Assets\Main\Items\BaseItem.cs" />
     <Compile Include="Assets\Main\UI\BaseWindow.cs" />
     <Compile Include="Assets\Main\UI\FadePanel.cs" />
+    <Compile Include="Assets\Main\UI\FlyText.cs" />
     <Compile Include="Assets\Main\UI\StarContainer.cs" />
     <Compile Include="Assets\Main\UI\WindowEnd.cs" />
     <Compile Include="Assets\Main\UI\WindowInGame.cs" />
@@ -102,6 +107,7 @@
     <Compile Include="Assets\Main\Units\Enemy.cs" />
     <Compile Include="Assets\Main\Utils\Enums.cs" />
     <Compile Include="Assets\Main\Utils\FollowTarget.cs" />
+    <Compile Include="Assets\Main\Utils\Utils1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AdMobPlugin\LICENSE.txt" />
@@ -161,5 +167,6 @@
     <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
     <None Include="Assets\Plugins\Android\unityads\res\values\strings.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

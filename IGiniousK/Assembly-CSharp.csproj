@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>E:/Unity5b14/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Unity 5.0.0b14/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>E:/Unity5b14/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Unity 5.0.0b14/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -67,11 +67,14 @@
      <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
      <Compile Include="Assets\Main\Controllers\AdvController.cs" />
      <Compile Include="Assets\Main\Controllers\FaceBookController.cs" />
+     <Compile Include="Assets\Main\Controllers\ItemsController.cs" />
      <Compile Include="Assets\Main\Controllers\ResultController.cs" />
      <Compile Include="Assets\Main\Controls\UIControls.cs" />
      <Compile Include="Assets\Main\GameController.cs" />
+     <Compile Include="Assets\Main\Items\BaseItem.cs" />
      <Compile Include="Assets\Main\UI\BaseWindow.cs" />
      <Compile Include="Assets\Main\UI\FadePanel.cs" />
+     <Compile Include="Assets\Main\UI\FlyText.cs" />
      <Compile Include="Assets\Main\UI\StarContainer.cs" />
      <Compile Include="Assets\Main\UI\WindowEnd.cs" />
      <Compile Include="Assets\Main\UI\WindowInGame.cs" />
@@ -82,6 +85,7 @@
      <Compile Include="Assets\Main\Units\Enemy.cs" />
      <Compile Include="Assets\Main\Utils\Enums.cs" />
      <Compile Include="Assets\Main\Utils\FollowTarget.cs" />
+     <Compile Include="Assets\Main\Utils\Utils1.cs" />
      <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
      <None Include="Assets\Plugins\Android\AndroidManifest 3.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_image.xml" />
@@ -139,10 +143,10 @@
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector_background_transition.xml" />
      <None Include="Assets\Plugins\Android\unityads\AndroidManifest.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/Unity5b14/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Unity 5.0.0b14/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="IFacebook">
- <HintPath>E:/UnityProjects/geni_k.git/IGiniousK/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
+ <HintPath>C:/Rep_IGin_K/IGiniousK/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
