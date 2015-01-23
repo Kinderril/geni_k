@@ -13,6 +13,7 @@ public class WindowEnd : BaseWindow
     public void OnOkClicked()
     {
         GameController.OnEndConfirm();
+        
     }
 
     public override void Init(GameController gc)

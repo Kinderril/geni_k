@@ -74,13 +74,18 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         startBallPos = ball.transform.position;
+
+       
         foreach (var enemy in enemies)
         {
             enemiesStartPositions.Add(enemy.transform.position);
         }
+        
+
         fbControls = new FaceBookController(this, DebugText);
         advController = new AdvController(this,DebugText);
         resultController = new ResultController();
+        resultController.Load();
     }
 
     public float GetEndTime()
@@ -93,6 +98,7 @@ public class GameController : MonoBehaviour
 	    uiControls = GetComponent<UIControls>();
         uiControls.Init(ball);
         WindowManager.Init(allWindows,this);
+        Debug.Log("starting...");
         WindowManager.WindowOn(startCanvas);
 	}
 	
@@ -105,16 +111,20 @@ public class GameController : MonoBehaviour
 	    }
 	}
 
-    public void StartGame()
+    public void StartGame(int curLevel)
     {
         int i = 0;
         points = 0;
+        Utils1.Shuffle(enemies);
         foreach (var enemy in enemies)
         {
-            enemy.Init(this);
-            enemy.gameObject.SetActive(true);
-            enemy.transform.position = enemiesStartPositions[i];
-            i++;
+            if (i <= curLevel)
+            {
+                enemy.Init(this);
+                enemy.gameObject.SetActive(true);
+                enemy.transform.position = enemiesStartPositions[i];
+                i++;
+            }
         }
         //ball.transform.position = startBallPos;
         ball.Init(this, startBallPos,LT,BR);
@@ -122,6 +132,7 @@ public class GameController : MonoBehaviour
         Game_Stage = GameStage.game;
         startTime = Time.time;
         WindowInGame.SetPoints(points);
+        resultController.curLevel = curLevel;
     //    AdMobGameObject.gameObject.SetActive(false);
     }
 
@@ -137,7 +148,9 @@ public class GameController : MonoBehaviour
         resultController.roundNumber++;
         resultController.lastTime = endTime - startTime;
         Game_Stage = GameStage.end;
-    
+
+        resultController.LevelUp();
+        resultController.Save();
     }
 
 
@@ -164,7 +177,7 @@ public class GameController : MonoBehaviour
         Utils1.Shuffle(enemies);
 
         int i = 0;
-        int p = 15;
+        int p = 45;
         foreach (var enemy in enemies)
         {
             points += p;
@@ -173,10 +186,6 @@ public class GameController : MonoBehaviour
             if (i < 2)
             {
                 enemy.StartRotate();
-            }
-            else
-            {
-                //enemy.StartRotate();
             }
             i++;
         }
