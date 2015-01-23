@@ -11,6 +11,17 @@ public class Enemy : MonoBehaviour
     private Vector2 accv;
     private Vector3 baseScale;
     private Animator animator;
+
+    public Animator Animator
+    {
+        get
+        {
+            if (animator == null)
+                animator = GetComponent<Animator>();
+            return animator;
+        }
+    }
+
     //private bool isScaled = false;
     //private float scaleEndTime;
 
@@ -91,13 +102,13 @@ public class Enemy : MonoBehaviour
     */
     public void StartRotate()
     {
-        animator.SetBool("shallRotate", true);
+        Animator.SetBool("shallRotate", true);
         //animator.GetCurrentAnimatorStateInfo(0).
     }
 
     public void EndRotate()
     {
-        animator.SetBool("shallRotate",false);
+        Animator.SetBool("shallRotate",false);
     }
 
     public void LowSpped(float p)

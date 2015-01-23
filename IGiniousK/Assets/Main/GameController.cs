@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
         Utils1.Shuffle(enemies);
         foreach (var enemy in enemies)
         {
-            if (i <= curLevel)
+            if (i <= curLevel+1)
             {
                 enemy.Init(this);
                 enemy.gameObject.SetActive(true);
@@ -177,17 +177,13 @@ public class GameController : MonoBehaviour
         Utils1.Shuffle(enemies);
 
         int i = 0;
-        int p = 45;
-        foreach (var enemy in enemies)
+        int p = (int)(350 * enemies[1].transform.localScale.x);
+        points += p;
+        WindowInGame.SetPoints(points);
+        WindowInGame.LaunchPoints(enemies[1].transform.position, points);
+        for (int j = 0; j < 2; j++)
         {
-            points += p;
-            WindowInGame.SetPoints(points);
-            WindowInGame.LaunchPoints(enemy.transform.position, points);
-            if (i < 2)
-            {
-                enemy.StartRotate();
-            }
-            i++;
+            enemies[j].StartRotate();
         }
         
     }

@@ -37,7 +37,7 @@ public class ResultController
     {
         if (curLevel == level)
         {
-            if (TotalPoints() > 5000 && level < 7)
+            if (TotalPoints() > 5000 && level < 6)
                 level++;
         }
     }
