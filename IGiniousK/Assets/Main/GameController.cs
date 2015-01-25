@@ -97,8 +97,8 @@ public class GameController : MonoBehaviour
 	{
 	    uiControls = GetComponent<UIControls>();
         uiControls.Init(ball);
-        WindowManager.Init(allWindows,this);
-        Debug.Log("starting...");
+        WindowManager.Init(allWindows, this, Screen.width / 800f);
+        Debug.Log("starting..." + (Screen.width / 800f) + "  " + Screen.width);
         WindowManager.WindowOn(startCanvas);
 	}
 	
@@ -145,10 +145,10 @@ public class GameController : MonoBehaviour
         {
             enemy.gameObject.SetActive(false);
         }
-        resultController.roundNumber++;
         resultController.lastTime = endTime - startTime;
+        resultController.roundNumber += (int)resultController.lastTime;
+        resultController.Lastlevel = resultController.curLevel;
         Game_Stage = GameStage.end;
-
         resultController.LevelUp();
         resultController.Save();
     }
@@ -156,7 +156,8 @@ public class GameController : MonoBehaviour
 
     public void OnEndConfirm()
     {
-        advController.AfterRoundAdv(resultController.roundNumber);
+        if (advController.AfterRoundAdv(resultController.roundNumber))
+            resultController.roundNumber = 0;
         Game_Stage = GameStage.mainMenu;
     }
 
@@ -172,7 +173,7 @@ public class GameController : MonoBehaviour
         WindowInGame.SetPoints(points);
     }
 
-    public void LowScale(Vector3 pos,float effectDuration)
+    public void BigBonus(Vector3 pos,float effectDuration)
     {
         Utils1.Shuffle(enemies);
 
@@ -181,10 +182,16 @@ public class GameController : MonoBehaviour
         points += p;
         WindowInGame.SetPoints(points);
         WindowInGame.LaunchPoints(enemies[1].transform.position, points);
+
+        foreach (var item in enemies)
+        {
+            item.StartRotate();
+        }
+        /*
         for (int j = 0; j < 2; j++)
         {
             enemies[j].StartRotate();
-        }
+        }*/
         
     }
 

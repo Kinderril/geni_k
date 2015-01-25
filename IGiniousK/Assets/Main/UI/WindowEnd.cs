@@ -22,8 +22,8 @@ public class WindowEnd : BaseWindow
         //endSlider.value = gc.GetEndTime() / gc.MaxTime;
         pointsLabel.text = "Points: \n" +  gc.resultController.lastPoints.ToString();
         cureentResult.text = "Time: \n" + gc.GetEndTime().ToString("00.00");
-        string ss = "It's All You Can?";
-        send2fb = "so-so";
+        //string ss = "It's All You Can?";
+        send2fb = gc.resultController.Lastlevel.ToString("0");
         /*
         if (endSlider.value > 0.6f)
         {

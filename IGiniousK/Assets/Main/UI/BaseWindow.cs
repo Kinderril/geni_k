@@ -19,6 +19,7 @@ public class BaseWindow : MonoBehaviour
     public virtual void Init(GameController gc)
     {
         this.gameController = gc;
+
     }
 
     public virtual void Dispose()

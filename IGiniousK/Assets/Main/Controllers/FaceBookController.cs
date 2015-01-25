@@ -116,7 +116,7 @@ public class FaceBookController  {
         FB.Feed(
             linkCaption: "",
             picture: "https://fbcdn-photos-f-a.akamaihd.net/hphotos-ak-xfp1/t39.2081-0/p128x128/10935991_1402239463405550_579798466_n.png",
-            linkName: "My time is:" + gameController.GetEndTime().ToString("00.00") + " \n I am " + msg + " Gin!",
+            linkName: "I reach:" + gameController.resultController.TotalPoints() + "points \n at level " + msg + "!",
             link: "http://apps.facebook.com/" + FB.AppId ,//+ "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest"),
             callback: fbDelegate
             ); 

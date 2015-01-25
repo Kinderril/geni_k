@@ -94,7 +94,7 @@ public class Ball : MonoBehaviour
             case ItemType.Freez:
                 break;
             case ItemType.SizeDown:
-                gamec.LowScale(item.transform.position,item.EffectDuration);
+                gamec.BigBonus(item.transform.position,item.EffectDuration);
                 break;
         }
 

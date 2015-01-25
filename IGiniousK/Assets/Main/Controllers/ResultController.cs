@@ -7,6 +7,7 @@ public class ResultController
     public float lastTime = 0;
     public int lastPoints;
     public int level;
+    public int Lastlevel;
     public int curLevel;
 
     private const string LEVEL_FIELD = "LEVEL_FIELD";

@@ -43,9 +43,11 @@ public class AdvController
     }
 
 
-    public void AfterRoundAdv(int round)
+    public bool AfterRoundAdv(int round)
     {
-        if (round%3==0)
+        bool shallShow = (int)(round / 100) > 0;
+        //Debug.Log("shallShow " + shallShow);
+        if (shallShow)
         {
             if (isAdv)
             {
@@ -56,7 +58,9 @@ public class AdvController
                 ShowAdvCb();
             }
             isAdv = !isAdv;
+            return true;
         }
+        return false;
     }
 }
 
